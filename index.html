@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>左滑删除</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <script src="dist/swiperLeft.js"></script>
+  <style>
+    body,html{
+      height:100%;
+      background-color:#f8f8f8;
+      font-size:14px;
+    }
+    *{
+      margin:0;
+      padding:0;
+    	box-sizing: border-box;
+    }
+    .header-box{
+      height:45px;
+      line-height:45px;
+      background-color: #03A9F4;
+      color:#fff;
+      font-size:18px;
+      text-align: center;
+    }
+    .content{
+      height:calc(100% - 45px);
+      overflow-x:hidden;
+      overflow-y: auto;
+    }
+    .mess-list{
+      position:relative;
+      list-style: none;
+    }
+    .mess-list>li{
+      position:relative;
+      height:60px;
+      background-color:#fff;
+    }
+    .mess-list .item-inner:active{
+      background-color:rgba(200,200,200,0.5);
+    }
+    .mess-list .item-inner:active .item-right{
+      border-color:rgba(200,200,200,0.5);
+    }
+    .item-inner{
+      position:relative;
+      height:100%;
+      padding-left:70px;
+    }
+    .item-left{
+      position:absolute;
+      width:70px;
+      height:100%;
+      top:0;
+      left:0;
+      text-align:center;
+    }
+    .item-left img{
+      width:45px;
+      height:45px;
+      border-radius:999px;
+      vertical-align: middle;
+      margin-top:8px;
+    }
+    .item-right{
+      padding:8px;
+      border-top:1px solid #f0f0f0;
+    }
+    .user-name{
+      font-size:16px;
+      color:#000;
+    }
+    .text-say{
+      font-size:14px;
+      color:#aaa;
+      margin-top:5px;
+    }
+    .item-action{
+      position:absolute;
+      height:60px;
+      line-height:60px;
+      font-size:16px;
+      color:#fff;
+      top:0;
+      right:0;
+      -webkit-transform:translateX(100%);
+      transform:translateX(100%);
+    }
+    .action-delete,.action-set-top{
+      width:50px;
+      display: inline-block;
+      background-color: #ff4e24;
+      text-align: center;
+    }
+    .action-set-top{
+      background-color:#ddd;
+    }
+    .action-read{
+      width:100px;
+      display: inline-block;
+      background-color: #ffb628;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="header-box">
+    消息
+  </div>
+  <div class="content">
+    <ul class="mess-list">
+      <li class="mess-item">
+        <div class="item-inner">
+          <div class="item-left">
+            <img class="img-avatar" src="./images/avatar-1.jpg">
+          </div>
+          <div class="item-right">
+            <div class="user-name">亲爱的老婆</div>
+            <div class="text-say">晚上好</div>
+          </div>
+        </div>
+        <div class="item-action">
+          <span class="action-delete">删除</span>
+        </div>
+      </li>
+      <li class="mess-item">
+        <div class="item-inner">
+          <div class="item-left">
+            <img class="img-avatar" src="./images/avatar-2.jpg">
+          </div>
+          <div class="item-right">
+            <div class="user-name">小三</div>
+            <div class="text-say">晚上有空吗？</div>
+          </div>
+        </div>
+        <div class="item-action">
+          <span class="action-read">标为未读</span><span class="action-delete">删除</span>
+        </div>
+      </li>
+      <li class="mess-item">
+        <div class="item-inner">
+          <div class="item-left">
+            <img class="img-avatar" src="./images/avatar-3.jpg">
+          </div>
+          <div class="item-right">
+            <div class="user-name">小姨子</div>
+            <div class="text-say">吃饭没</div>
+          </div>
+        </div>
+        <div class="item-action">
+          <span class="action-set-top">置顶</span><span class="action-read">标为未读</span><span class="action-delete">删除</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <script>
+	  new swiperLeft(document.querySelectorAll('.mess-item')[0]);
+	  new swiperLeft(document.querySelectorAll('.mess-item')[1]);
+	  new swiperLeft(document.querySelectorAll('.mess-item')[2]);
+
+</script>
+</body>
+</html>
